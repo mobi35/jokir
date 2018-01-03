@@ -1,0 +1,10 @@
+ {
+  "schemaVersion" :1 ,
+  "dockerfileLines" :[
+                        "FROM  webdevops/php-nginx:alpine-php5",
+                        "ENV PHP_MAX_EXECUTION_TIME 110",
+                        "COPY ./src/app /app",
+                        "COPY ./src/php.ini opt/docker/etc/php/php.ini"
+                    ]
+ }
+
