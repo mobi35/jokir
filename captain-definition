@@ -12,7 +12,9 @@
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
 
                         "RUN chmod -R 775 /var/www/html/storage",
-                        "RUN chmod -R 775 /var/www/html/bootstrap/cache"
+                        "RUN chmod -R 775 /var/www/html/bootstrap/cache",
+
+                        "RUN chown -R www-data /var/www/html"
 
 
 
