@@ -5,17 +5,20 @@
                         "ENV PHP_MAX_EXECUTION_TIME 110",
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
                         "ENV WEBROOT /var/www/html/public",
-                        "COPY --chown=nobody:nobody ./app /var/www/html",
-                        "USER nobody",
-                        "RUN cd /var/www/html",
-                        "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
-                        "RUN composer install",
-                    
+                        "RUN usermod -aG www-data nobody",
+
                        "RUN chmod -R 775 /var/www/html/storage",
                         "RUN chmod -R 775 /var/www/html/storage/logs",
                         "RUN chmod -R 775 /var/www/html/bootstrap/cache",
 
-                        "RUN chown -R www-data /var/www/html"
+                        "COPY --chown=nobody:www-data ./app /var/www/html",
+                        "USER nobody",
+
+                        "RUN cd /var/www/html",
+                        "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
+                        "RUN composer install"
+                    
+                   
                         
 
 
