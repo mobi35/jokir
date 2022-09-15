@@ -8,7 +8,7 @@
                         "RUN cd /var/www/html ",
                         "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
                         "RUN composer install",
-                        "USER www-data"
+                        "USER www-data",
                     
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
 
