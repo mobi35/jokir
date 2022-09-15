@@ -4,20 +4,22 @@
 
 
                         "FROM tangramor/nginx-php8-fpm",
+
                         "ENV PHP_MAX_EXECUTION_TIME 110",
 
-                    
+                        "RUN addgroup -S adichan && adduser -S adichan -G adichan",
+                        "RUN addgroup adichan wheel",
 
                         "ENV WEBROOT /var/www/html/public",
                         "COPY ./app /var/www/html",
                         "RUN cd /var/www/html ",
                         "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
 
-                        "USER nobody",
+                        "USER adichan",
                         "RUN composer install --prefer-dist --no-scripts --no-dev --no-autoloader",
-                        "COPY ./php.ini opt/docker/etc/php/php.ini"
+                        "COPY ./php.ini opt/docker/etc/php/php.ini",
 
-                     
+                        "RUN chown -R adichan:adichan /var/www/html"
 
 
     ]
