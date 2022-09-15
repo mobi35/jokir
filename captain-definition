@@ -1,7 +1,7 @@
  {
   "schemaVersion" :2 ,
   "dockerfileLines" :[
-                        "FROM  trafex/php-nginx:latest",
+                        "FROM  webdevops/php-nginx",
                         "ENV PHP_MAX_EXECUTION_TIME 110",
                         "COPY ./app /var/www",
                         "COPY ./php.ini opt/docker/etc/php/php.ini"
