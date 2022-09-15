@@ -1,10 +1,10 @@
  {
   "schemaVersion" :2 ,
   "dockerfileLines" :[
-                        "FROM  webdevops/php-nginx",
+                        "FROM tangramor/nginx-php8-fpm",
                         "ENV PHP_MAX_EXECUTION_TIME 110",
-                        "COPY ./app /app",
+                        "COPY ./app /var/www/html",
                         "COPY ./php.ini opt/docker/etc/php/php.ini"
-                    ]
+    ]
  }
 
