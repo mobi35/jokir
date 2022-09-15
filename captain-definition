@@ -8,9 +8,6 @@
 
                         "COPY ./app /var/www/html",
 
-                        "RUN chmod -R 775 /var/www/html/storage",
-                        "RUN chmod -R 775 /var/www/html/storage/logs",
-                        "RUN chmod -R 775 /var/www/html/bootstrap/cache",
 
                         "RUN cd /var/www/html",
                         "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
