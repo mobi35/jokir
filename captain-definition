@@ -6,8 +6,7 @@
                         "FROM tangramor/nginx-php8-fpm",
                         "ENV PHP_MAX_EXECUTION_TIME 110",
 
-                        # "RUN addgroup -S nobody && adduser -S nobody -G nobody",
-                        # "RUN addgroup nobody wheel",
+                    
 
                         "ENV WEBROOT /var/www/html/public",
                         "COPY ./app /var/www/html",
