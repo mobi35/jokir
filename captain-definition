@@ -13,7 +13,7 @@
                         "COPY ./app /var/www/html",
                         "RUN chown -R nobody:nobody /var/www/html",
 
-                        "RUN chmod -R 775 /var/www/html",
+                        "RUN chmod -R 777 /var/www/html",
 
 
                         "RUN cd /var/www/html",
