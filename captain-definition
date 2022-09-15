@@ -4,20 +4,17 @@
                         "FROM tangramor/nginx-php8-fpm",
                         "ENV PHP_MAX_EXECUTION_TIME 110",
                         "ENV WEBROOT /var/www/html/public",
-                        "COPY ./app /var/www/html",
+                        "COPY --chown=www-data:www-data ./app /var/www/html",
                         "RUN cd /var/www/html ",
                         "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
                         "RUN composer install",
+                        "USER www-data"
                     
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
 
                         "RUN chmod -R 775 /var/www/html/storage",
                         "RUN chmod -R 775 /var/www/html/storage/logs",
                         "RUN chmod -R 775 /var/www/html/bootstrap/cache",
-
-                        "RUN chown -R www-data /var/www/html"
-
-
 
     ]
  }
