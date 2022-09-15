@@ -18,7 +18,7 @@
                         "RUN chmod -R 775 /var/www/html/storage/logs",
                         "RUN chmod -R 775 /var/www/html/bootstrap/cache",
 
-                        "RUN chown -R laravel:laravel /var/www/html",
+                        "RUN chown -R laravel:laravel /var/www/html"
 
     ]
  }
