@@ -5,12 +5,12 @@
                         "ENV PHP_MAX_EXECUTION_TIME 110",
 
 
+                        "USER root",
+
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
                         "ENV WEBROOT /var/www/html/public",
 
-                        "USER root",
-                        "ADD ./app /var/www/html",
-                        "RUN chown -R nobody:nobody /var/www/html",
+                        "COPY --chown=root:root ./app /var/www/html",
 
 
                         "RUN cd /var/www/html",
