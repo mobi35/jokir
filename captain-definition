@@ -11,12 +11,14 @@
                     
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
 
+                        "RUN useradd --groups www-data --uid 1000 --home /home/laravel laravel",
+                        "RUN mkdir --parents /home/laravel/.composer",
+
                         "RUN chmod -R 775 /var/www/html/storage",
+                        "RUN chmod -R 775 /var/www/html/storage/logs",
                         "RUN chmod -R 775 /var/www/html/bootstrap/cache",
 
-                        "RUN chown -R www-data /var/www/html"
-
-
+                        "RUN chown -R laravel:laravel /var/www/html",
 
     ]
  }
