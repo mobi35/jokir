@@ -17,7 +17,7 @@
                         "RUN composer install --prefer-dist --no-scripts --no-dev --no-autoloader",
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
 
-                        "RUN chown -R nobody:nobody /var/www/html"
+                     
 
 
     ]
