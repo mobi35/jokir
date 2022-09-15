@@ -1,7 +1,7 @@
  {
   "schemaVersion" :2 ,
   "dockerfileLines" :[
-                        "FROM  webdevops/php-nginx:alpine-php5",
+                        "FROM  luzifer/alpine-nginx-php",
                         "ENV PHP_MAX_EXECUTION_TIME 110",
                         "COPY ./app /app",
                         "COPY ./php.ini opt/docker/etc/php/php.ini"
