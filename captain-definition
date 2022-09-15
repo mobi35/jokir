@@ -1,30 +1,23 @@
  {
   "schemaVersion" :2 ,
   "dockerfileLines" :[
-
-
                         "FROM tangramor/nginx-php8-fpm",
-
                         "ENV PHP_MAX_EXECUTION_TIME 110",
-
-                        "RUN addgroup -S adichan && adduser -S adichan -G adichan",
-                        "RUN addgroup adichan wheel",
-
                         "ENV WEBROOT /var/www/html/public",
                         "COPY ./app /var/www/html",
                         "RUN cd /var/www/html ",
                         "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
-
-                        "USER adichan",
-                        "RUN composer install --prefer-dist --no-scripts --no-dev --no-autoloader",
+                        "RUN composer install",
+                    
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
 
-                        "RUN chown -R adichan:adichan /var/www/html"
+                        "RUN chmod -R 775 /var/www/html/storage",
+                        "RUN chmod -R 775 /var/www/html/storage/logs",
+                        "RUN chmod -R 775 /var/www/html/bootstrap/cache",
+
+                        "RUN chown -R www-data /var/www/html"
+
 
 
     ]
  }
-
-
-
-
