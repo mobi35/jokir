@@ -6,12 +6,8 @@
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
                         "ENV WEBROOT /var/www/html/public",
 
-                        "RUN addgroup -g 1000 -S www",
-                        "RUN adduser -u 1000 -S www -G www",
 
-                        "USER www",
-
-                        "COPY --chown=www:www ./app /var/www/html",
+                        "COPY --chown=web:web ./app /var/www/html",
 
                         "RUN chmod -R 775 /var/www/html/storage",
                         "RUN chmod -R 775 /var/www/html/storage/logs",
