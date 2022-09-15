@@ -4,14 +4,16 @@
                         "FROM tangramor/nginx-php8-fpm",
                         "ENV PHP_MAX_EXECUTION_TIME 110",
 
-
-                        "USER root",
-
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
                         "ENV WEBROOT /var/www/html/public",
 
+
+                        "USER root",
+
                         "COPY ./app /var/www/html",
                         "RUN chown -R nobody:nobody /var/www/html",
+
+                        "RUN chmod -R 775 /var/www/html",
 
 
                         "RUN cd /var/www/html",
@@ -19,6 +21,5 @@
                         "RUN composer install",
                         
 
-                    "USER nobody"
     ]
  }
