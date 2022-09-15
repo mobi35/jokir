@@ -4,8 +4,9 @@
                         "FROM tangramor/nginx-php8-fpm",
                         "ENV PHP_MAX_EXECUTION_TIME 110",
                         "ENV WEBROOT /var/www/html/public",
+                        "cd /var/www/html ",
+                        "composer install"
                         "COPY ./app /var/www/html",
                         "COPY ./php.ini opt/docker/etc/php/php.ini"
     ]
  }
-
