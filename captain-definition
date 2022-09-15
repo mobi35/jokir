@@ -5,8 +5,8 @@
                         "ENV PHP_MAX_EXECUTION_TIME 110",
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
                         "ENV WEBROOT /var/www/html/public",
-
                         "COPY ./app /var/www/html",
+                        "RUN chown -R www-data:www-data /var/www/html",
 
 
                         "RUN cd /var/www/html",
