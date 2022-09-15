@@ -5,8 +5,8 @@
                         "ENV PHP_MAX_EXECUTION_TIME 110",
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
                         "ENV WEBROOT /var/www/html/public",
-                        "COPY --chown=www:www ./app /var/www/html",
-                        "USER www",
+                        "COPY --chown=nobody:nobody ./app /var/www/html",
+                        "USER nobody",
                         "RUN cd /var/www/html",
                         "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
                         "RUN composer install"
