@@ -1,0 +1,27 @@
+{
+  "resources/scripts/main.ts": {
+    "file": "assets/main.af2b5567.js",
+    "src": "resources/scripts/main.ts",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/views/pages/article/article.vue",
+      "resources/views/pages/welcome.vue"
+    ]
+  },
+  "resources/views/pages/article/article.vue": {
+    "file": "assets/article.de79d873.js",
+    "src": "resources/views/pages/article/article.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/scripts/main.ts"
+    ]
+  },
+  "resources/views/pages/welcome.vue": {
+    "file": "assets/welcome.293c1a40.js",
+    "src": "resources/views/pages/welcome.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/scripts/main.ts"
+    ]
+  }
+}
