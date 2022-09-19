@@ -2,7 +2,6 @@
 <Head>
   <title>this is an article page</title>
   <meta name="description" content="Your page description">
-<meta property="og:url"           content="https://uplus.boragnitrealty.xyz" />
 <meta property="og:type"          content="store" />
 <meta property="og:title"         content="This is my custom titol" />
 <meta property="og:description"   :content="description" />

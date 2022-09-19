@@ -1,6 +1,6 @@
 {
   "resources/scripts/main.ts": {
-    "file": "assets/main.8f489615.js",
+    "file": "assets/main.269e52fd.js",
     "src": "resources/scripts/main.ts",
     "isEntry": true,
     "dynamicImports": [
@@ -9,7 +9,7 @@
     ]
   },
   "resources/views/pages/article/article.vue": {
-    "file": "assets/article.6c1effe7.js",
+    "file": "assets/article.f06f19b1.js",
     "src": "resources/views/pages/article/article.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -17,7 +17,7 @@
     ]
   },
   "resources/views/pages/welcome.vue": {
-    "file": "assets/welcome.5ff3a702.js",
+    "file": "assets/welcome.d3e4ecb6.js",
     "src": "resources/views/pages/welcome.vue",
     "isDynamicEntry": true,
     "imports": [
