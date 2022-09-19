@@ -6,7 +6,7 @@
 <meta property="og:type"          content="store" />
 <meta property="og:title"         content="This is my custom titol" />
 <meta property="og:description"   :content="description" />
-<meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+
 </Head>
   <div>
     This is an article page
