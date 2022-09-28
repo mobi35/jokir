@@ -20,7 +20,7 @@
 
                         "RUN cd /var/www/html",
                         "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
-                        "RUN composer install"
+                        "RUN composer install",
 
 			"RUN npm install",
 
