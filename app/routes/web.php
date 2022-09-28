@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FinancialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return inertia('welcome');
+    return view('welcome');
 });
 
-Route::get('/article/article', function () {
-    return inertia('article/article');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+
+Route::get('financial/{id}', [FinancialController::class, 'get'] );
+
+
+require __DIR__.'/auth.php';
