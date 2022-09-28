@@ -3,6 +3,8 @@
   "dockerfileLines" :[
 			"FROM node:alpine",
                         "FROM tangramor/nginx-php8-fpm",
+                        "FROM php:8.1-cli",
+
                         "ENV PHP_MAX_EXECUTION_TIME 110",
 
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
@@ -18,7 +20,6 @@
 
                         "RUN cd /var/www/html",
                         "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
-                        "COPY --from=php:latest /usr/bin/php /usr/local/bin/php",
                         "RUN composer install --ignore-platform-reqs",
 
 			"RUN npm install",
