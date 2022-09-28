@@ -1,7 +1,7 @@
  {
   "schemaVersion" :2 ,
   "dockerfileLines" :[
-			"FROM node:16",
+			"FROM node:alpine",
                         "FROM tangramor/nginx-php8-fpm",
                         "ENV PHP_MAX_EXECUTION_TIME 110",
 
@@ -21,7 +21,7 @@
 
                         "RUN chmod -R 777 /var/www/html",
 
-			"CMD ['npm', 'build']"
+			"CMD ['npm', 'build']",
 
 
                         "RUN cd /var/www/html",

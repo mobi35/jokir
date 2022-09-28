@@ -1,7 +1,7 @@
  {
   "schemaVersion" :2 ,
   "dockerfileLines" :[
-			"FROM node:16",
+			"FROM node:alpine",
                         "FROM tangramor/nginx-php8-fpm",
                         "ENV PHP_MAX_EXECUTION_TIME 110",
 
@@ -15,7 +15,6 @@
                         "RUN chown -R nobody:nobody /var/www/html",
 
 			"RUN npm install",
-
 
 
 
