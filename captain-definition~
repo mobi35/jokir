@@ -18,13 +18,13 @@
 
                         "RUN cd /var/www/html",
                         "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
+                        "COPY --from=php:latest /usr/bin/php /usr/local/bin/php",
                         "RUN composer install --ignore-platform-reqs",
 
 			"RUN npm install",
 
 			"RUN npm run build",
 			"RUN php artisan migrate"
-                        
 
     ]
  }
