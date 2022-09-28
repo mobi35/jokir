@@ -3,7 +3,6 @@
   "dockerfileLines" :[
 			"FROM node:alpine",
                         "FROM tangramor/nginx-php8-fpm",
-                        "FROM php:8.1-cli",
 
                         "ENV PHP_MAX_EXECUTION_TIME 110",
 
