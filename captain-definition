@@ -14,7 +14,7 @@
                         "COPY ./app /var/www/html",
                         "RUN chown -R nobody:nobody /var/www/html",
 
-                        "RUN chmod -R 775 /var/www/html",
+                        "RUN chmod -R 777 /var/www/html",
 
                         "RUN cd /var/www/html",
                         "COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer",
