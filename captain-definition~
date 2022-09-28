@@ -21,7 +21,7 @@
 
                         "RUN chmod -R 777 /var/www/html",
 
-			"CMD ['npm', 'build']",
+			"CMD ['npm', 'build']"
 
 
                         "RUN cd /var/www/html",
