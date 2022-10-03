@@ -9,9 +9,7 @@
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
                         "ENV WEBROOT /var/www/html/public",
 
-                        # "USER root",
                         "COPY ./app /var/www/html",
-                        # "RUN chown -R root:root /var/www/html",
 
                         "RUN chmod -R 777 /var/www/html",
 
