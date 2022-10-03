@@ -8,7 +8,6 @@
 
                         "COPY ./php.ini opt/docker/etc/php/php.ini",
                         "ENV WEBROOT /var/www/html/public",
-
                         "USER root",
                         "COPY ./app /var/www/html",
 
@@ -19,11 +18,8 @@
                         "RUN composer install --ignore-platform-reqs",
 
 			"RUN npm install",
-
 			"RUN npm run build",
                         "RUN php artisan optimize:clear",
 			"RUN php artisan migrate"
-
-
     ]
  }
